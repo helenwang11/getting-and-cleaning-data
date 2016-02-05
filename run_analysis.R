@@ -1,6 +1,7 @@
 #!/usr/bin/Rscript
 
-setwd("UCI HAR Dataset")
+library(dplyr)
+
 features<-read.table("features.txt",header=F,stringsAsFactors = F)
 colnames(features)<-c("number","feature")
 features[grepl("Mean|mean|std",features$feature),]$feature-> desired_features
@@ -35,4 +36,14 @@ rbind(test,train) -> total
 
 
 total%>%group_by(subject,activity)%>%summarise_each(funs(mean))->total_tidy
+colnames(total_tidy)->variable_names
+rename_variable<-function(x){
+  sub("^t","time_",x)->x
+  sub("^f","frequency_",x)->x
+  gsub("-","_",x)->x
+  gsub("[()]","",x)->x
+  x
+}
+sapply(variable_names,rename_variable)->colnames(total_tidy)
+
 write.table(total_tidy,"total_tidy.txt",row.names=F)
