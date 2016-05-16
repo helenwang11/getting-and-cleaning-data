@@ -13,5 +13,5 @@ the script does the following:
 3. assign descriptive activity name to each data entry
 4. assign variable name to each data entry
 5. select variable names containing "mean" or "Mean" or "std"
-6. rename the variables with more descriptive variable names (output file: tidy.txt)
+6. rename the variables with more descriptive variable names
 7. calculate average for each variable for each subject ID for each activity (output file: tidy_mean.txt)
