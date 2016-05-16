@@ -21,12 +21,11 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
    f -> frequency
    change the "-" to "_"
    remove the parentheses
-9. write out "tidy": "tidy.txt"
-10. summarize total data tidy data set with the average of each variable for each activity and each subject: dataframe "tidy_mean"
-11. write out "tidy_mean": "tidy_mean.txt"
+9. summarize tidy data set with the average of each variable for each activity and each subject: dataframe "tidy_mean"
+10. write out "tidy_mean": "tidy_mean.txt"
 
 
-The new variable names in the tidy data are:
+The new variable names in the tidy_mean data are:
 
 subject	
 activity	
